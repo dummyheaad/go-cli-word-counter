@@ -29,12 +29,12 @@ A simple app that can count the number of words from STDIN. This App can also be
 ### Line Counter
     ./wc -l -file test.txt
     Output:
-    Word counting result for each file:
+    Line counting result for each file:
     filename: test.txt, Count: 2
 ### Byte Counter
     ./wc -b -file test.txt test1.txt test2.txt
     Output:
-    Line counting result for each file:
-    filename: test.txt, Count: 2
-    filename: test1.txt, Count: 3
-    filename: test2.txt, Count: 1
+    Byte counting result for each file:
+    filename: test.txt, Count: 14
+    filename: test1.txt, Count: 33
+    filename: test2.txt, Count: 11
