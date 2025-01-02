@@ -43,3 +43,39 @@ func TestCountBytes(t *testing.T) {
 		t.Errorf("Expected %d, got %d instead. \n", exp, res)
 	}
 }
+
+// TestCountFromFile tests the count function from a file
+func TestCountFromFile(t *testing.T) {
+	filename := []string{"test.txt"}
+
+	countWords, err := countFromFile(filename, false, false)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	countBytes, err := countFromFile(filename, false, true)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	countLines, err := countFromFile(filename, true, false)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	expWords := 4
+	expBytes := 14
+	expLines := 2
+
+	if expWords != countWords["test.txt"] {
+		t.Errorf("Expected %d, got %d instead\n", expWords, countWords["test.txt"])
+	}
+
+	if expBytes != countBytes["test.txt"] {
+		t.Errorf("Expected %d, got %d instead\n", expBytes, countBytes["test.txt"])
+	}
+
+	if expLines != countLines["test.txt"] {
+		t.Errorf("Expected %d, got %d instead\n", expLines, countLines["test.txt"])
+	}
+}
